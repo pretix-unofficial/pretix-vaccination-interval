@@ -1,0 +1,97 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-12-23 12:49+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: pretix_vaccination_interval/__init__.py:16
+msgid "Enforced vaccination intervals"
+msgstr ""
+
+#: pretix_vaccination_interval/__init__.py:18
+msgid ""
+"If pretix is used for COVID-19 vaccinations, this plugin can be used to make "
+"sure the correct number of days between two shots is ensured."
+msgstr ""
+
+#: pretix_vaccination_interval/signals.py:21
+msgid "Vaccination interval"
+msgstr ""
+
+#: pretix_vaccination_interval/signals.py:35
+msgid ""
+"To proceed, please make sure your cart contains exactly two different dates. "
+"Currently, you only selected one date."
+msgstr ""
+
+#: pretix_vaccination_interval/signals.py:39
+msgid ""
+"To proceed, please make sure your cart contains no more than two different "
+"dates."
+msgstr ""
+
+#: pretix_vaccination_interval/signals.py:43
+msgid ""
+"You submitted a different number of registration for the two dates you "
+"selected, please make sure that the number of registrations matches exactly."
+msgstr ""
+
+#: pretix_vaccination_interval/signals.py:52
+#, python-brace-format
+msgid ""
+"The first date you select must not be more than {max} days in the future, "
+"but you selected a date that is {current} days in the future."
+msgstr ""
+
+#: pretix_vaccination_interval/signals.py:60
+#, python-brace-format
+msgid ""
+"The dates you select must not be more than {max} days apart, but you "
+"selected two dates that are {current} days apart."
+msgstr ""
+
+#: pretix_vaccination_interval/signals.py:68
+#, python-brace-format
+msgid ""
+"The dates you select must not be at least {min} days apart, but you selected "
+"two dates that are only {current} days apart."
+msgstr ""
+
+#: pretix_vaccination_interval/templates/pretix_vaccination_interval/settings.html:5
+msgid "Vaccination intervals"
+msgstr ""
+
+#: pretix_vaccination_interval/templates/pretix_vaccination_interval/settings.html:11
+msgid "Save"
+msgstr ""
+
+#: pretix_vaccination_interval/views.py:13
+msgid "Maximum time frame for first shot"
+msgstr ""
+
+#: pretix_vaccination_interval/views.py:17
+#: pretix_vaccination_interval/views.py:25
+#: pretix_vaccination_interval/views.py:33
+msgid "days"
+msgstr ""
+
+#: pretix_vaccination_interval/views.py:21
+msgid "Minimum interval between first and second shot"
+msgstr ""
+
+#: pretix_vaccination_interval/views.py:29
+msgid "Maximum interval between first and second shot"
+msgstr ""

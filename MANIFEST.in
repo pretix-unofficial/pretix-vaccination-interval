@@ -1,0 +1,3 @@
+recursive-include pretix_vaccination_interval/static *
+recursive-include pretix_vaccination_interval/templates *
+recursive-include pretix_vaccination_interval/locale *
