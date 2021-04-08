@@ -4,10 +4,11 @@ from django.dispatch import receiver
 from django.urls import resolve, reverse
 from django.utils.timezone import now
 from django.utils.translation import gettext_lazy as _  # NoQA
+from pretix_vaccination_interval.exporters import OrderListExporter
 
 from pretix.base.services.cart import CartError
 from pretix.base.settings import settings_hierarkey
-from pretix.base.signals import validate_cart
+from pretix.base.signals import validate_cart, register_multievent_data_exporters
 from pretix.control.signals import nav_event_settings
 
 
@@ -75,3 +76,9 @@ def val_cart(sender, positions, **kwargs):
 settings_hierarkey.add_default('vaccination_interval_min', 0, int)
 settings_hierarkey.add_default('vaccination_interval_max', 0, int)
 settings_hierarkey.add_default('vaccination_future_max', 0, int)
+
+
+@receiver(register_multievent_data_exporters, dispatch_uid="pretix_vaccination_interval_orderlist")
+def register_multievent_orderlist_exporter(sender, **kwargs):
+    if sender.events.filter(plugins__icontains="pretix_vaccination_interval").exists():
+        return OrderListExporter
