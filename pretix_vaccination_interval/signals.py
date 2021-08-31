@@ -30,6 +30,9 @@ def nav_event_settings(sender, request, **kwargs):
 
 @receiver(validate_cart, dispatch_uid='pretix_vaccination_validate_cart')
 def val_cart(sender, positions, **kwargs):
+    if not sender.settings.vaccination_interval_check:
+        return
+
     subevent_counter = Counter([p.subevent for p in positions if p.addon_to_id is None])
     if len(subevent_counter) < 2:
         raise CartError(
@@ -73,6 +76,7 @@ def val_cart(sender, positions, **kwargs):
         )
 
 
+settings_hierarkey.add_default('vaccination_interval_check', True, bool)
 settings_hierarkey.add_default('vaccination_interval_min', 0, int)
 settings_hierarkey.add_default('vaccination_interval_max', 0, int)
 settings_hierarkey.add_default('vaccination_future_max', 0, int)

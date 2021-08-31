@@ -9,6 +9,10 @@ from pretix.control.views.event import (
 
 
 class VaccSettingsForm(SettingsForm):
+    vaccination_interval_check = forms.BooleanField(
+        label=_('Enable validation'),
+        required=False,
+    )
     vaccination_future_max = forms.IntegerField(
         label=_('Maximum time frame for first shot'),
         required=True,
