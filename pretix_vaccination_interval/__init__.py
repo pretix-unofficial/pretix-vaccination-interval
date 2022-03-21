@@ -17,6 +17,7 @@ class PluginApp(PluginConfig):
         author = 'pretix team'
         description = gettext_lazy('If pretix is used for COVID-19 vaccinations, this plugin can be used to make sure the correct number of days between two shots is ensured.')
         visible = True
+        experimental = True
         version = __version__
         category = 'CUSTOMIZATION'
         compatibility = "pretix>=2.7.0"
