@@ -1,7 +1,7 @@
-from django.conf.urls import url
+from django.urls import path
 from pretix_vaccination_interval.views import VaccSettings
 
 urlpatterns = [
-    url(r'^control/event/(?P<organizer>[^/]+)/(?P<event>[^/]+)/vaccinationinterval/$',
+    path('control/event/<str:organizer>/<str:event>/vaccinationinterval/',
         VaccSettings.as_view(), name='settings'),
 ]
