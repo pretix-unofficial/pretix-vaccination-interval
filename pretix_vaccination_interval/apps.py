@@ -8,6 +8,7 @@ except ImportError:
 
 
 class PluginApp(PluginConfig):
+    default = True
     name = 'pretix_vaccination_interval'
     verbose_name = 'Enforced vaccination intervals'
 
